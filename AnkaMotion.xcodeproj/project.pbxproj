@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67F7254523D0394D009F2E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254423D0394D009F2E53 /* AppDelegate.swift */; };
+		67F7254723D0394D009F2E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254623D0394D009F2E53 /* SceneDelegate.swift */; };
+		67F7254923D0394D009F2E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254823D0394D009F2E53 /* ViewController.swift */; };
+		67F7254C23D0394D009F2E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F7254A23D0394D009F2E53 /* Main.storyboard */; };
+		67F7254F23D0394D009F2E53 /* AnkaMotion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254D23D0394D009F2E53 /* AnkaMotion.xcdatamodeld */; };
+		67F7255123D0394F009F2E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F7255023D0394F009F2E53 /* Assets.xcassets */; };
+		67F7255423D0394F009F2E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F7255223D0394F009F2E53 /* LaunchScreen.storyboard */; };
+		67F7255F23D0394F009F2E53 /* AnkaMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7255E23D0394F009F2E53 /* AnkaMotionTests.swift */; };
+		67F7256A23D0394F009F2E53 /* AnkaMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7256923D0394F009F2E53 /* AnkaMotionUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67F7255B23D0394F009F2E53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67F7253923D0394D009F2E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67F7254023D0394D009F2E53;
+			remoteInfo = AnkaMotion;
+		};
+		67F7256623D0394F009F2E53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67F7253923D0394D009F2E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67F7254023D0394D009F2E53;
+			remoteInfo = AnkaMotion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67F7254123D0394D009F2E53 /* AnkaMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnkaMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F7254423D0394D009F2E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67F7254623D0394D009F2E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		67F7254823D0394D009F2E53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67F7254B23D0394D009F2E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67F7254E23D0394D009F2E53 /* AnkaMotion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnkaMotion.xcdatamodel; sourceTree = "<group>"; };
+		67F7255023D0394F009F2E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67F7255323D0394F009F2E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67F7255523D0394F009F2E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67F7255A23D0394F009F2E53 /* AnkaMotionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnkaMotionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F7255E23D0394F009F2E53 /* AnkaMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkaMotionTests.swift; sourceTree = "<group>"; };
+		67F7256023D0394F009F2E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67F7256523D0394F009F2E53 /* AnkaMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnkaMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F7256923D0394F009F2E53 /* AnkaMotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkaMotionUITests.swift; sourceTree = "<group>"; };
+		67F7256B23D0394F009F2E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67F7253E23D0394D009F2E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F7255723D0394F009F2E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F7256223D0394F009F2E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67F7253823D0394D009F2E53 = {
+			isa = PBXGroup;
+			children = (
+				67F7254323D0394D009F2E53 /* AnkaMotion */,
+				67F7255D23D0394F009F2E53 /* AnkaMotionTests */,
+				67F7256823D0394F009F2E53 /* AnkaMotionUITests */,
+				67F7254223D0394D009F2E53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67F7254223D0394D009F2E53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67F7254123D0394D009F2E53 /* AnkaMotion.app */,
+				67F7255A23D0394F009F2E53 /* AnkaMotionTests.xctest */,
+				67F7256523D0394F009F2E53 /* AnkaMotionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67F7254323D0394D009F2E53 /* AnkaMotion */ = {
+			isa = PBXGroup;
+			children = (
+				67F7254423D0394D009F2E53 /* AppDelegate.swift */,
+				67F7254623D0394D009F2E53 /* SceneDelegate.swift */,
+				67F7254823D0394D009F2E53 /* ViewController.swift */,
+				67F7254A23D0394D009F2E53 /* Main.storyboard */,
+				67F7255023D0394F009F2E53 /* Assets.xcassets */,
+				67F7255223D0394F009F2E53 /* LaunchScreen.storyboard */,
+				67F7255523D0394F009F2E53 /* Info.plist */,
+				67F7254D23D0394D009F2E53 /* AnkaMotion.xcdatamodeld */,
+			);
+			path = AnkaMotion;
+			sourceTree = "<group>";
+		};
+		67F7255D23D0394F009F2E53 /* AnkaMotionTests */ = {
+			isa = PBXGroup;
+			children = (
+				67F7255E23D0394F009F2E53 /* AnkaMotionTests.swift */,
+				67F7256023D0394F009F2E53 /* Info.plist */,
+			);
+			path = AnkaMotionTests;
+			sourceTree = "<group>";
+		};
+		67F7256823D0394F009F2E53 /* AnkaMotionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67F7256923D0394F009F2E53 /* AnkaMotionUITests.swift */,
+				67F7256B23D0394F009F2E53 /* Info.plist */,
+			);
+			path = AnkaMotionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67F7254023D0394D009F2E53 /* AnkaMotion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67F7256E23D0394F009F2E53 /* Build configuration list for PBXNativeTarget "AnkaMotion" */;
+			buildPhases = (
+				67F7253D23D0394D009F2E53 /* Sources */,
+				67F7253E23D0394D009F2E53 /* Frameworks */,
+				67F7253F23D0394D009F2E53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnkaMotion;
+			productName = AnkaMotion;
+			productReference = 67F7254123D0394D009F2E53 /* AnkaMotion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67F7255923D0394F009F2E53 /* AnkaMotionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67F7257123D0394F009F2E53 /* Build configuration list for PBXNativeTarget "AnkaMotionTests" */;
+			buildPhases = (
+				67F7255623D0394F009F2E53 /* Sources */,
+				67F7255723D0394F009F2E53 /* Frameworks */,
+				67F7255823D0394F009F2E53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67F7255C23D0394F009F2E53 /* PBXTargetDependency */,
+			);
+			name = AnkaMotionTests;
+			productName = AnkaMotionTests;
+			productReference = 67F7255A23D0394F009F2E53 /* AnkaMotionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67F7256423D0394F009F2E53 /* AnkaMotionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67F7257423D0394F009F2E53 /* Build configuration list for PBXNativeTarget "AnkaMotionUITests" */;
+			buildPhases = (
+				67F7256123D0394F009F2E53 /* Sources */,
+				67F7256223D0394F009F2E53 /* Frameworks */,
+				67F7256323D0394F009F2E53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67F7256723D0394F009F2E53 /* PBXTargetDependency */,
+			);
+			name = AnkaMotionUITests;
+			productName = AnkaMotionUITests;
+			productReference = 67F7256523D0394F009F2E53 /* AnkaMotionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67F7253923D0394D009F2E53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "burak kaya";
+				TargetAttributes = {
+					67F7254023D0394D009F2E53 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					67F7255923D0394F009F2E53 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 67F7254023D0394D009F2E53;
+					};
+					67F7256423D0394F009F2E53 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 67F7254023D0394D009F2E53;
+					};
+				};
+			};
+			buildConfigurationList = 67F7253C23D0394D009F2E53 /* Build configuration list for PBXProject "AnkaMotion" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67F7253823D0394D009F2E53;
+			productRefGroup = 67F7254223D0394D009F2E53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67F7254023D0394D009F2E53 /* AnkaMotion */,
+				67F7255923D0394F009F2E53 /* AnkaMotionTests */,
+				67F7256423D0394F009F2E53 /* AnkaMotionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67F7253F23D0394D009F2E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F7255423D0394F009F2E53 /* LaunchScreen.storyboard in Resources */,
+				67F7255123D0394F009F2E53 /* Assets.xcassets in Resources */,
+				67F7254C23D0394D009F2E53 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F7255823D0394F009F2E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F7256323D0394F009F2E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67F7253D23D0394D009F2E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F7254F23D0394D009F2E53 /* AnkaMotion.xcdatamodeld in Sources */,
+				67F7254923D0394D009F2E53 /* ViewController.swift in Sources */,
+				67F7254523D0394D009F2E53 /* AppDelegate.swift in Sources */,
+				67F7254723D0394D009F2E53 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F7255623D0394F009F2E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F7255F23D0394F009F2E53 /* AnkaMotionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F7256123D0394F009F2E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F7256A23D0394F009F2E53 /* AnkaMotionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67F7255C23D0394F009F2E53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67F7254023D0394D009F2E53 /* AnkaMotion */;
+			targetProxy = 67F7255B23D0394F009F2E53 /* PBXContainerItemProxy */;
+		};
+		67F7256723D0394F009F2E53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67F7254023D0394D009F2E53 /* AnkaMotion */;
+			targetProxy = 67F7256623D0394F009F2E53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67F7254A23D0394D009F2E53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67F7254B23D0394D009F2E53 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67F7255223D0394F009F2E53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67F7255323D0394F009F2E53 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67F7256C23D0394F009F2E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67F7256D23D0394F009F2E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67F7256F23D0394F009F2E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7UJ425XN7W;
+				INFOPLIST_FILE = AnkaMotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "burak-kaya.AnkaMotion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67F7257023D0394F009F2E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7UJ425XN7W;
+				INFOPLIST_FILE = AnkaMotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "burak-kaya.AnkaMotion";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67F7257223D0394F009F2E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7UJ425XN7W;
+				INFOPLIST_FILE = AnkaMotionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "burak-kaya.AnkaMotionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnkaMotion.app/AnkaMotion";
+			};
+			name = Debug;
+		};
+		67F7257323D0394F009F2E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7UJ425XN7W;
+				INFOPLIST_FILE = AnkaMotionTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "burak-kaya.AnkaMotionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnkaMotion.app/AnkaMotion";
+			};
+			name = Release;
+		};
+		67F7257523D0394F009F2E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7UJ425XN7W;
+				INFOPLIST_FILE = AnkaMotionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "burak-kaya.AnkaMotionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AnkaMotion;
+			};
+			name = Debug;
+		};
+		67F7257623D0394F009F2E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7UJ425XN7W;
+				INFOPLIST_FILE = AnkaMotionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "burak-kaya.AnkaMotionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AnkaMotion;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67F7253C23D0394D009F2E53 /* Build configuration list for PBXProject "AnkaMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F7256C23D0394F009F2E53 /* Debug */,
+				67F7256D23D0394F009F2E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F7256E23D0394F009F2E53 /* Build configuration list for PBXNativeTarget "AnkaMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F7256F23D0394F009F2E53 /* Debug */,
+				67F7257023D0394F009F2E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F7257123D0394F009F2E53 /* Build configuration list for PBXNativeTarget "AnkaMotionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F7257223D0394F009F2E53 /* Debug */,
+				67F7257323D0394F009F2E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F7257423D0394F009F2E53 /* Build configuration list for PBXNativeTarget "AnkaMotionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F7257523D0394F009F2E53 /* Debug */,
+				67F7257623D0394F009F2E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		67F7254D23D0394D009F2E53 /* AnkaMotion.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				67F7254E23D0394D009F2E53 /* AnkaMotion.xcdatamodel */,
+			);
+			currentVersion = 67F7254E23D0394D009F2E53 /* AnkaMotion.xcdatamodel */;
+			path = AnkaMotion.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 67F7253923D0394D009F2E53 /* Project object */;
+}
