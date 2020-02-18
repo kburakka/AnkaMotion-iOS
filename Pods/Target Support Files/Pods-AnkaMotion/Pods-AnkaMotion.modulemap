@@ -1,0 +1,6 @@
+framework module Pods_AnkaMotion {
+  umbrella header "Pods-AnkaMotion-umbrella.h"
+
+  export *
+  module * { export * }
+}
