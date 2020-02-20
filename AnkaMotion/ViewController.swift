@@ -11,18 +11,7 @@ import CoreMotion
 import CoreLocation
 import Charts
 import MBRadioButton
-
-struct DataType {
-    let x : Double
-    let y : Double
-    let z : Double
-    
-    init(x : Double, y:Double , z:Double) {
-        self.x = x
-        self.y = y
-        self.z = z
-    }
-}
+import Alamofire
 
 class ViewController: UIViewController , ChartViewDelegate{
 
@@ -30,7 +19,8 @@ class ViewController: UIViewController , ChartViewDelegate{
     var timer : Timer?
     var isChartWorking = true
     let locationManager = CLLocationManager()
-
+//    let baseUrl = "http://88.198.184.17:2020";
+    let baseUrl = "http://192.168.20.56:2020"
     @IBOutlet weak var speedLabel: UILabel!
     var currentLoc : CLLocation?
     var lastLoc : CLLocation?
@@ -43,14 +33,19 @@ class ViewController: UIViewController , ChartViewDelegate{
     @IBOutlet weak var chartStateLabel: UIButton!
     @IBOutlet weak var AccButton: RadioButton!
     @IBOutlet weak var locLabel: UILabel!
-    
+    var allGyros = [DataType]()
+    var allAccs = [DataType]()
     var gyroDatas = [DataType]()
     var accDatas = [DataType]()
     let color = UIColor(red: 250/255, green: 255/255, blue: 255/255, alpha: 0.5)
     var selectedButton = String()
-    
+    let devideId = UIDevice.current.identifierForVendor?.uuidString
+    let osVersion = UIDevice.current.systemVersion
+    let format = DateFormatter()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkDeviceExist()
         startMeasurement()
         setLoc()
         gyroLabel.numberOfLines = 0
@@ -61,7 +56,13 @@ class ViewController: UIViewController , ChartViewDelegate{
         AccButton.delegate = self
         gyroButton.isOn = true
         selectedButton = "gyro"
-        
+        // 2) Set the current timezone to .current, or America/Chicago.
+        format.timeZone = .current
+         
+        // 3) Set the format of the altered date.
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+         
+        // 4) Set the current date, altered by timezone.
         let dataAcc = dataWithCount(datas: accDatas)
         let dataGyro = dataWithCount(datas: gyroDatas)
 
@@ -69,6 +70,92 @@ class ViewController: UIViewController , ChartViewDelegate{
         setupChart(lineChart, data: dataGyro, color: color)
         
         let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        
+        let _ = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(postDatas), userInfo: nil, repeats: true)
+        
+        let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(motionCounter), userInfo: nil, repeats: true)
+    }
+    
+    var isDeviceExist = true;
+    func checkDeviceExist(){
+        let url = baseUrl + "/isDeviceExist/" + (devideId ?? "")
+        Alamofire.request(url, method: .get).responseJSON{ response in
+            if response.result.isSuccess
+            {
+                let value = response.value as? [String : Int]
+                if let value = value{
+                    let count = value["state"]
+                    if let count = count{
+                        if count == 0{
+                            self.isDeviceExist = false
+                            self.checkDeviceExist()
+                        }else{
+                            self.isDeviceExist = true
+                        }
+                    }else{
+                        self.isDeviceExist = true
+                        self.checkDeviceExist()
+                    }
+                }else{
+                    self.isDeviceExist = true
+                    self.checkDeviceExist()
+                }
+            }else{
+                self.isDeviceExist = true
+                self.checkDeviceExist()
+            }
+        }
+    }
+    
+    @objc func postDatas(){
+        let urlStr = baseUrl + "/motionObjects/" + (devideId ?? "")
+        let url = URL(string: urlStr)
+        var request = URLRequest(url: url!)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = try! JSONSerialization.data(withJSONObject: datas, options: [])
+
+        Alamofire.request(request).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                self.datas.removeAll()
+                print(response.result.value ?? "nil")
+                break
+            case .failure:
+                self.datas.removeAll()
+                print(response.error ?? "nil")
+                break
+            }
+        }
+    }
+    
+    var speed : Double = 0.0
+    
+    func postMotion(x : Double, y : Double, z : Double, perSecond : Int, type: String){
+        let currentDate = Date()
+        var data = ["location":"\(currentLoc?.coordinate.longitude ?? 0) \(currentLoc?.coordinate.latitude ?? 0)",
+            "x":x,
+            "y":y,
+            "z":z,
+            "type":type,
+            "speed": speed,
+            "date":format.string(from: currentDate),
+            "accuracy": currentLoc?.horizontalAccuracy ?? 0,
+            "data_per_second":perSecond,
+            "speed_":currentLoc?.speed ?? 0
+            ] as [String : Any]
+        
+        if isDeviceExist == false{
+            data["phoneNumber"] = ""
+            data["osVersion"] = osVersion
+            data["deviceModel"] = UIDevice.modelName
+            data["device"] = ""
+            data["brand"] = "apple"
+            data["imei"] = ""
+            data["meid"] = ""
+            data["product"] = ""
+        }
+        datas.append(data)
     }
     
     @objc func fireTimer() {
@@ -77,10 +164,10 @@ class ViewController: UIViewController , ChartViewDelegate{
             let distance = currentLoc.distance(from: lastLoc)
             let time = currentLoc.timestamp.timeIntervalSince(lastLoc.timestamp)
             
-            var speed = (distance / time) * 3.6
+            speed = (distance / time) * 3.6
             speed = roundTo(digit: 2, value: speed)
             
-            speedLabel.text = "\(speed) km/h"
+            speedLabel.text = "\(speed) \(currentLoc.speed)"
         }else{
             speedLabel.text = "0 km/h"
         }
@@ -156,14 +243,11 @@ class ViewController: UIViewController , ChartViewDelegate{
         
         chart.delegate = self
         chart.backgroundColor = color
-        
         chart.chartDescription?.enabled = true
-        
         chart.dragEnabled = true
         chart.setScaleEnabled(true)
         chart.pinchZoomEnabled = false
         chart.setViewPortOffsets(left: 40, top: 0, right: 10, bottom: 0)
-        
         chart.legend.enabled = true
         chart.leftAxis.enabled = true
         chart.leftAxis.spaceTop = 0.4
@@ -171,7 +255,6 @@ class ViewController: UIViewController , ChartViewDelegate{
         chart.rightAxis.enabled = false
         chart.xAxis.enabled = false
         chart.data = data
-        
         chart.animate(xAxisDuration: 0.1)
     }
     
@@ -180,7 +263,6 @@ class ViewController: UIViewController , ChartViewDelegate{
         let y = Double(round(power*value)/power)
         return y
     }
-
     
    func getAverage(nums: [Double]) ->Double
     {
@@ -193,12 +275,23 @@ class ViewController: UIViewController , ChartViewDelegate{
         let average = temp/div
         return average
     }
-    
-    var allGyros = [DataType]()
-    var allAccs = [DataType]()
 
+    var datas = [[String:Any]]()
+    var gyroCounter = 0
+    var gyroCounterFinal = 0
+    var accCounter = 0
+    var accCounterFinal = 0
+    @objc func motionCounter(){
+        gyroCounterFinal = gyroCounter
+        gyroCounter = 0
+        
+        accCounterFinal = accCounter
+        accCounter = 0
+    }
     func getGyros(){
         if motion.isGyroAvailable{
+            gyroCounter += 1
+            
             if let data = self.motion.gyroData {
                 var x = roundTo(digit: 5, value: data.rotationRate.x)
                 var y = roundTo(digit: 5, value: data.rotationRate.y)
@@ -222,6 +315,8 @@ class ViewController: UIViewController , ChartViewDelegate{
                     lineChart.data = dataWithCount(datas: gyroDatas)
                 }
         
+                postMotion(x: x, y: y, z: z, perSecond: gyroCounterFinal, type: "gyroscope")
+                
                 self.gyroLabel.text = "GYRO \n\nX: \(x) \nY: \(y) \nZ: \(z)"
                 
                 if allGyros.count == 20{
@@ -233,6 +328,8 @@ class ViewController: UIViewController , ChartViewDelegate{
     
     func getAcc(){
         if motion.isAccelerometerAvailable{
+            accCounter += 1
+
             if let data = self.motion.accelerometerData {
                 var x = roundTo(digit: 5, value: data.acceleration.x - getGravity()[0])
                 var y = roundTo(digit: 5, value: data.acceleration.y - getGravity()[1])
@@ -251,7 +348,7 @@ class ViewController: UIViewController , ChartViewDelegate{
                         accDatas.append(DataType(x: x, y: y, z: z))
                     }
                 }
-                                
+                postMotion(x: x, y: y, z: z, perSecond: accCounterFinal , type: "accelerometer")
                 if selectedButton == "acc" && isChartWorking{
                     lineChart.data = dataWithCount(datas: accDatas)
                 }
@@ -304,13 +401,13 @@ class ViewController: UIViewController , ChartViewDelegate{
         if self.timer != nil {
             self.timer?.invalidate()
             self.timer = nil
-            
             self.motion.stopGyroUpdates()
             self.motion.stopDeviceMotionUpdates()
             self.motion.stopAccelerometerUpdates()
         }
     }
 }
+
 extension ViewController : RadioButtonDelegate{
     func radioButtonDidDeselect(_ button: RadioButton) {
         
@@ -341,7 +438,7 @@ extension ViewController: CLLocationManagerDelegate {
             let latitude = roundTo(digit: 5, value: location.coordinate.latitude)
             let longitude = roundTo(digit: 5, value: location.coordinate.longitude)
 
-            locLabel.text = "KONUM \n\nLat: \(latitude) \nLng: \(longitude) \n - \(location.horizontalAccuracy) m -"
+            locLabel.text = "KONUM \n\nLat: \(latitude)\nLng: \(longitude)\n - \(location.horizontalAccuracy) m -"
         }
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		67BE248F23D6DD4F009767FE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 67BE248E23D6DD4F009767FE /* Podfile */; };
+		67F3DEDA23FC30FE003C47D8 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F3DED923FC30FE003C47D8 /* DataType.swift */; };
+		67F3DEDD23FD72D5003C47D8 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F3DEDC23FD72D5003C47D8 /* UIDevice.swift */; };
 		67F7254523D0394D009F2E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254423D0394D009F2E53 /* AppDelegate.swift */; };
 		67F7254723D0394D009F2E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254623D0394D009F2E53 /* SceneDelegate.swift */; };
 		67F7254923D0394D009F2E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7254823D0394D009F2E53 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		67BE248E23D6DD4F009767FE /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		67F3DED923FC30FE003C47D8 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		67F3DEDC23FD72D5003C47D8 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		67F7254123D0394D009F2E53 /* AnkaSensör.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnkaSensör.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7254423D0394D009F2E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F7254623D0394D009F2E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67F3DED823FC30E0003C47D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67F3DED923FC30FE003C47D8 /* DataType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67F3DEDB23FD72C2003C47D8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				67F3DEDC23FD72D5003C47D8 /* UIDevice.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		67F7253823D0394D009F2E53 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +131,8 @@
 		67F7254323D0394D009F2E53 /* AnkaMotion */ = {
 			isa = PBXGroup;
 			children = (
+				67F3DEDB23FD72C2003C47D8 /* Extension */,
+				67F3DED823FC30E0003C47D8 /* Model */,
 				67F7254423D0394D009F2E53 /* AppDelegate.swift */,
 				67F7254623D0394D009F2E53 /* SceneDelegate.swift */,
 				67F7254823D0394D009F2E53 /* ViewController.swift */,
@@ -335,6 +357,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F7254F23D0394D009F2E53 /* AnkaMotion.xcdatamodeld in Sources */,
+				67F3DEDD23FD72D5003C47D8 /* UIDevice.swift in Sources */,
+				67F3DEDA23FC30FE003C47D8 /* DataType.swift in Sources */,
 				67F7254923D0394D009F2E53 /* ViewController.swift in Sources */,
 				67F7254523D0394D009F2E53 /* AppDelegate.swift in Sources */,
 				67F7254723D0394D009F2E53 /* SceneDelegate.swift in Sources */,
